@@ -1,0 +1,25 @@
+Determine the kinds
+1. *
+2. *
+   * -> *
+
+String processing
+see string.hs
+
+Validate the word
+see mkword.hs
+
+It's only Natural
+see nat.hs
+
+Small library for Maybe
+see maybe.hs
+
+Small library for Either
+see either.hs
+
+Unfolds
+see unfolds.hs
+
+Finally something other than a list!
+see tree.hs
