@@ -1,0 +1,41 @@
+name:                hangman
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            Pang Luo
+license:             BSD3
+license-file:        LICENSE
+author:              Pang Luo
+maintainer:          Pang Luo
+copyright:           2018 Pang Luo
+category:            Game
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  data/dict.txt
+
+library
+  ghc-options:         -Wall
+  exposed-modules:     Hangman
+  build-depends:       base >= 4.7 && < 5,
+                       random
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+executable hangman
+  ghc-options:         -Wall
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5,
+                       random
+  other-modules:       Hangman
+
+test-suite tests
+  ghc-options:         -Wall
+  type:                exitcode-stdio-1.0
+  main-is:             tests.hs
+  hs-source-dirs:      tests
+  build-depends:       base >= 4.7 && < 5,
+                       containers,
+                       hangman,
+                       QuickCheck
