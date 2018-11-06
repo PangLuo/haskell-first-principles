@@ -1,0 +1,16 @@
+1. forever
+   when
+
+2. Data.Bits
+   Database.Blacktip.Types
+
+3. types of the Blacktip library
+
+4.
+a) Control.Concurrent.MVar
+   Filesystem.Path.CurrentOS
+   Control.Concurrent
+
+b) Filesystem.writeFile
+
+c) Control.Monad

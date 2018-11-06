@@ -1,0 +1,23 @@
+name:                hangman
+version:             0.1.0.0
+synopsis:            Playing Hangman
+-- description:
+homepage:            Pang Luo
+license:             BSD3
+license-file:        LICENSE
+author:              Pang Luo
+maintainer:          Pang Luo
+copyright:           2018 Pang Luo
+category:            Game
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  data/dict.txt
+
+executable hangman
+  ghc-options:         -Wall
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5,
+                       random,
+                       split
