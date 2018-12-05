@@ -19,9 +19,7 @@ oneTwoThree :: Parser String
 oneTwoThree = choice [string "123", string "12", string "1"]
 
 string' :: String -> Parser String
-string' "" = return ""
-string' (x:xs) =
-  char x >>= \x -> string' xs >>= \xs -> return (x:xs)
+string' s = try $ foldr (>>) (return s) $ fmap char s
 
 pNL s =
   putStrLn ('\n': s)
