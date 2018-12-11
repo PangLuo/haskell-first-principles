@@ -7,10 +7,14 @@ import Text.Trifecta
 type DecimalOrFraction =
   Either Integer Rational
 
-goodDecimal = "10"
-badFraction = "1/0"
+goodDecimal1 = "10"
+goodDecimal2 = "10abc"
+badFraction1 = "1/"
+badFraction2 = "1/abc"
+badFraction3 = "1/0"
+badFraction4 = "1/0abc"
 goodFraction1 = "1/2"
-goodFraction2 = "2/1"
+goodFraction2 = "1/2abc"
 noNum = "abc"
 
 fraction :: Parser Rational
@@ -24,14 +28,18 @@ fraction = do
 
 parseDof :: Parser DecimalOrFraction
 parseDof =
-  ((try (Right <$> fraction) <?> "Tried fraction") <|>
-   (Left <$> decimal <?> "Tried decimal")) <* eof
+  (try (Left <$> decimal <* notFollowedBy (char '/')) <?> "Tried decimal")
+    <|> (Right <$> fraction <?> "Tried fraction")
 
 main :: IO ()
 main = do
   let parseDof' = parseString parseDof mempty
-  print $ parseDof' goodDecimal
-  print $ parseDof' badFraction
+  print $ parseDof' goodDecimal1
+  print $ parseDof' goodDecimal2
+  print $ parseDof' badFraction1
+  print $ parseDof' badFraction2
+  print $ parseDof' badFraction3
+  print $ parseDof' badFraction4
   print $ parseDof' goodFraction1
   print $ parseDof' goodFraction2
   print $ parseDof' noNum
