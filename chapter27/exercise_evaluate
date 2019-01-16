@@ -1,0 +1,20 @@
+1. const 1 undefined
+1
+
+2. const undefined 1
+bottom
+
+3. flip const undefined 1
+1
+
+4. flip const 1 undefined
+bottom
+
+5. const undefined undefined
+bottom
+
+6. foldr const 'z' ['a'..'e']
+'a'
+
+7. foldr (flip const) 'z' ['a'..'e']
+'z'
