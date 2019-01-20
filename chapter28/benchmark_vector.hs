@@ -3,7 +3,7 @@ module Main where
 -- stack ghc -- -prof -fprof-auto -rtsopts -O2 benchmark_vector.hs
 -- ./benchmark_vector +RTS -P > result
 -- cat benchmark_vector.prof
--- note %alloc of v and v
+-- note %alloc of v and uv
 
 import Control.Monad
 import qualified Data.Vector as V
