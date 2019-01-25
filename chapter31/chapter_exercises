@@ -1,0 +1,6 @@
+1. insert into users(username, shell, homeDirectory, realName, phone) values ("pang", "/bin/bash", "/Users/pang", "Pang Luo", "0451-123-4567");
+
+2 & 3. see fingerd/src/User.hs
+
+4. see fingerd/src/Main.hs and fingerd/src/Client.hs
+
