@@ -21,4 +21,4 @@ embedded :: MaybeT
             (ExceptT String
                      (ReaderT () IO))
             Int
-embedded = MaybeT $ ExceptT $ ReaderT $ fmap return $ const $ Right $ Just 1
+embedded = MaybeT $ ExceptT $ ReaderT $ const $ return $ Right $ Just 1
