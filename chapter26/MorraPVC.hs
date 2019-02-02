@@ -48,7 +48,11 @@ main = do
   putStrLn
     "-- P is Player\n\
     \-- C is Computer\n\
-    \-- Player is odds. Computer is evens.\n"
+    \-- Player is odds. Computer is evens.\n\
+    \-- The game consists of 10 rounds. For each round, both\n\
+    \   participants input 1 or 2. If the sum of the two numbers\n\
+    \   is odd, Player wins, otherwise Computer is the winner for\n\
+    \   this round.\n"
   (p, c, _, _) <-
     execStateT (replicateM_ rounds play) (0, 0, S.empty, M.empty)
   putStrLn $ "Player's score: " ++ show p ++
